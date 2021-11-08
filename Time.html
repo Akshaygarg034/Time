@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1 {
+        background: powderblue;
+        border-radius: 5px;
+        width: fit-content;
+        margin: auto;
+
+
+    }
+</style>
+
+<body>
+    <h1>Current time is <span id="hours"></span>:<span id="minutes"></span>:<span id="seconds"></span> <span id="ampm"></span></h1>
+</body>
+<script>
+    function showdate() {
+        let date = new Date();
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        let seconds = date.getSeconds();
+        let ampm = 0;
+        if (hours >= 12) {
+            ampm = "PM";
+        }
+        else {
+            ampm = "AM";
+        }
+        document.getElementById("hours").innerHTML = hours
+        document.getElementById("minutes").innerHTML = minutes
+        document.getElementById("seconds").innerHTML = seconds
+        document.getElementById("ampm").innerHTML = ampm
+    }
+    setInterval(showdate, 1000)
+</script>
+
+</html>
